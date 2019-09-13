@@ -1,6 +1,9 @@
+cordova.define("cordova-plugin-powermanagement.powermanagement", function(require, exports, module) {
 
-var PowerManagement = function() {
-};
+
+var exec = require("cordova/exec");
+
+var PowerManagement = function() {};
 
 /**
  * Acquire a new wake-lock (keep device awake)
@@ -28,4 +31,6 @@ PowerManagement.prototype.release = function(successCallback, failureCallback) {
 	cordova.exec(successCallback, failureCallback, 'PowerManagement', 'release', []);
 };
 
-module.exports = new PowerManagement();
+var powermanagement = new PowerManagement();
+module.exports = powermanagement;
+});
